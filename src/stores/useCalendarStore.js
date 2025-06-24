@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 export const useCalendarStore = create((set, get) => ({
   // State
   currentDate: dayjs(),
-  viewMode: "weekly",
+  viewMode: "monthly",
 
   // Actions
   navigate: (direction) => {
