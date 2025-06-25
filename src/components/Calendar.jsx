@@ -99,7 +99,6 @@ export default function Calendar() {
         }!`
       );
 
-      // Refresh details modal if open
       if (detailsModal.isOpen && detailsModal.data?.date) {
         const updatedEvents = getEventsForDate(detailsModal.data.date);
         openDetailsModal({

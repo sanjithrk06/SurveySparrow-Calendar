@@ -3,7 +3,6 @@
 import {
   ChevronLeft,
   ChevronRight,
-  CalendarIcon,
   Grid3X3,
   CalendarIcon as CalendarViewIcon,
   Upload,

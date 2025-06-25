@@ -1,8 +1,3 @@
-/**
- * Validates imported event data structure
- * @param {Object} event - Event object to validate
- * @returns {boolean} - Whether the event is valid
- */
 export const validateEventData = (event) => {
   const requiredFields = ["title", "date"];
   const validCategories = [
@@ -53,11 +48,6 @@ export const validateEventData = (event) => {
   return true;
 };
 
-/**
- * Processes and normalizes imported event data
- * @param {Object} event - Raw event data from import
- * @returns {Object} - Normalized event object
- */
 export const normalizeEventData = (event) => {
   return {
     title: event.title.trim(),
@@ -71,11 +61,6 @@ export const normalizeEventData = (event) => {
   };
 };
 
-/**
- * Reads and parses JSON file
- * @param {File} file - JSON file to read
- * @returns {Promise<Array>} - Promise resolving to array of events
- */
 export const readJsonFile = (file) => {
   return new Promise((resolve, reject) => {
     if (!file) {
@@ -123,11 +108,6 @@ export const readJsonFile = (file) => {
   });
 };
 
-/**
- * Processes imported events and returns valid ones with errors
- * @param {Array} rawEvents - Raw events from JSON file
- * @returns {Object} - Object containing valid events and errors
- */
 export const processImportedEvents = (rawEvents) => {
   const validEvents = [];
   const errors = [];
@@ -148,10 +128,6 @@ export const processImportedEvents = (rawEvents) => {
   return { validEvents, errors };
 };
 
-/**
- * Generates sample JSON structure for user reference
- * @returns {string} - JSON string with sample events
- */
 export const generateSampleJson = () => {
   const sampleEvents = [
     {
