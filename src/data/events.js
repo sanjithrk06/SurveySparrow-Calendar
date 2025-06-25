@@ -229,7 +229,7 @@ export const staticEvents = [
   {
     id: 18,
     title: "Independence Day",
-    date: "2025-07-04",
+    date: "2025-08-15",
     time: "all-day",
     duration: 0,
     type: "all-day",

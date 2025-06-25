@@ -150,7 +150,7 @@ export default function EventModal({
     >
       <div className="bg-white rounded-3xl w-full max-w-md shadow-2xl transform transition-all border border-gray-200 max-h-[90vh] overflow-y-auto hide-scrollbar">
         {/* Header */}
-        <div className="flex justify-between items-center p-6 pb-4 sticky top-0 bg-white rounded-t-3xl border-b border-gray-100">
+        <div className="flex z-50 justify-between items-center p-6 pb-4 sticky top-0 bg-white rounded-t-3xl border-b border-gray-100">
           <div>
             <h2 className="text-xl font-semibold text-gray-900">
               {editingEvent ? "Edit Event" : "Add Event"}

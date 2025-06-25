@@ -162,10 +162,15 @@ export default function Calendar() {
         onExportEvents={handleExportEvents}
       />
 
-      <p className="text-gray-500 mb-8 lg:mb-12 max-w-md text-sm lg:text-base">
+      <p className="text-gray-500 mb-3 lg:mb-12 max-w-md text-sm lg:text-base">
         Here all your planned events. You will find information for each event
         as well you can plan new ones.
       </p>
+
+      <div className=" lg:hidden text-gray-500 mb-8 max-w-md text-base flex flex-row items-center justify-start gap-1">
+        <div className="bg-black/80 w-5 h-5 rounded-full"></div>
+        <p>- Has Events</p>
+      </div>
 
       {viewMode === "weekly" ? (
         <WeeklyView {...viewProps} onDeleteEvent={handleDeleteEvent} />
