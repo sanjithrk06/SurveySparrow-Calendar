@@ -2,11 +2,9 @@ import { create } from "zustand";
 import dayjs from "dayjs";
 
 export const useCalendarStore = create((set, get) => ({
-  // State
   currentDate: dayjs(),
   viewMode: "monthly",
 
-  // Actions
   navigate: (direction) => {
     const { currentDate, viewMode } = get();
     const unit = viewMode === "weekly" ? "week" : "month";

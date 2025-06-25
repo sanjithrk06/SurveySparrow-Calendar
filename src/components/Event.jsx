@@ -1,5 +1,3 @@
-"use client";
-
 import { formatDisplayTime } from "../utils/dateUtils";
 import { eventTypes } from "../data/events";
 import {
@@ -106,9 +104,7 @@ export default function Event({
       </span>
 
       <div className="flex justify-between items-start mb-1">
-        <div
-          className={`font-semibold text-sm text-gray-700 leading-tight`}
-        >
+        <div className={`font-semibold text-sm text-gray-700 leading-tight`}>
           {event.title}
         </div>
         <div

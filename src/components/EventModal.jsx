@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import { X, Calendar } from "lucide-react";
 import { formatDate } from "../utils/dateUtils";

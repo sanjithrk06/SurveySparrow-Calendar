@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect } from "react";
 import dayjs from "dayjs";
 import toast, { Toaster } from "react-hot-toast";
@@ -58,7 +56,6 @@ export default function Calendar() {
       toast.success("Event created successfully!");
     }
 
-    // Refresh details modal if open for same date
     if (
       detailsModal.isOpen &&
       detailsModal.data?.date?.isSame(dayjs(eventData.date), "day")
@@ -111,6 +108,22 @@ export default function Calendar() {
     }
   };
 
+  const handleExportEvents = () => {
+    const dynamicEvents = useEventsStore.getState().events;
+
+    const dataStr = JSON.stringify(dynamicEvents, null, 2);
+    const blob = new Blob([dataStr], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `events_export_${Date.now()}.json`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   // Modal handlers
   const handleOpenEventModal = (date, event = null) => {
     openEventModal({ date, event });
@@ -146,6 +159,7 @@ export default function Calendar() {
         onViewModeChange={changeView}
         onAddEvent={() => handleOpenEventModal(dayjs())}
         onImportEvents={() => openImportModal()}
+        onExportEvents={handleExportEvents}
       />
 
       <p className="text-gray-500 mb-8 lg:mb-12 max-w-md text-sm lg:text-base">

@@ -1,11 +1,10 @@
-"use client";
-
 import {
   ChevronLeft,
   ChevronRight,
   Grid3X3,
   CalendarIcon as CalendarViewIcon,
   Upload,
+  Download,
 } from "lucide-react";
 
 export default function CalendarHeader({
@@ -15,18 +14,16 @@ export default function CalendarHeader({
   onViewModeChange,
   onAddEvent,
   onImportEvents,
+  onExportEvents,
 }) {
   const ViewButton = ({ mode, icon: Icon, label, isActive }) => (
     <button
       onClick={() => onViewModeChange(mode)}
-      className={`
-        flex items-center space-x-1 lg:space-x-2 px-2 lg:px-4 py-2 rounded-lg transition-all text-xs lg:text-sm font-medium
-        ${
-          isActive
-            ? "bg-white text-gray-900 shadow-sm"
-            : "text-gray-500 hover:text-gray-700"
-        }
-      `}
+      className={`flex items-center space-x-1 lg:space-x-2 px-2 lg:px-4 py-2 rounded-lg transition-all text-xs lg:text-sm font-medium ${
+        isActive
+          ? "bg-white text-gray-900 shadow-sm"
+          : "text-gray-500 hover:text-gray-700"
+      }`}
     >
       <Icon className="w-3 h-3 lg:w-4 lg:h-4 max-lg:m-0" />
       <span className="hidden sm:inline">{label}</span>
@@ -35,7 +32,6 @@ export default function CalendarHeader({
 
   return (
     <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6 lg:mb-8 space-y-4 lg:space-y-0">
-      {/* Title and Navigation */}
       <div className="flex items-center space-x-4 lg:space-x-6 mt-12 lg:mt-0">
         <h1 className="text-2xl lg:text-4xl font-light text-gray-900">
           {currentDate.format("MMM'")} {currentDate.format("YYYY")}
@@ -58,9 +54,7 @@ export default function CalendarHeader({
         </div>
       </div>
 
-      {/* Controls */}
       <div className="flex items-center justify-between lg:justify-end space-x-4">
-        {/* View Toggle */}
         <div className="flex bg-gray-100 rounded-xl p-1">
           <ViewButton
             mode="weekly"
@@ -82,6 +76,14 @@ export default function CalendarHeader({
         >
           <Upload className="w-4 h-4" />
           <span>Import</span>
+        </button>
+
+        <button
+          onClick={onExportEvents}
+          className="hidden lg:flex items-center space-x-2 px-4 py-2 text-gray-600 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors font-medium text-sm"
+        >
+          <Download className="w-4 h-4" />
+          <span>Export</span>
         </button>
 
         <button

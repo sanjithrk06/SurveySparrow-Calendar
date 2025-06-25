@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
 import { getDaysInMonth, getFirstDayOfMonth } from "../utils/dateUtils";

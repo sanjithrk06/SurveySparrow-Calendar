@@ -1,8 +1,6 @@
-"use client";
-
 import { isToday } from "../utils/dateUtils";
 import { eventTypes } from "../data/events";
-import { Calendar, Eye, OctagonAlert } from "lucide-react";
+import { Eye, OctagonAlert } from "lucide-react";
 
 export default function CalendarDay({
   date,
@@ -48,7 +46,6 @@ export default function CalendarDay({
         `}
         onClick={handleViewEvents}
       >
-        {/* Date Number */}
         <div
           className={` text-lg font-semibold transition-all duration-200 flex items-center justify-center rounded-full p-2
             ${
@@ -129,19 +126,16 @@ export default function CalendarDay({
                   }${isConflicted ? " - Has conflicts!" : ""}`}
                   onClick={(e) => handleEditEvent(e, event)}
                 >
-                  {/* Conflict Icon */}
                   {isConflicted && (
                     <div className="absolute top-1 right-1">
                       <OctagonAlert className="w-4 h-4 text-orange-400" />
                     </div>
                   )}
 
-                  {/* Title */}
                   <div className="pr-6 truncate font-semibold text-sm leading-tight pb-1">
                     {event.title}
                   </div>
 
-                  {/* Time and Duration */}
                   <div className="flex items-center space-x-1 text-xs font-normal text-gray-600 ">
                     <span className="truncate uppercase">{event.time}</span>
                     <span className="text-base leading-none">•</span>

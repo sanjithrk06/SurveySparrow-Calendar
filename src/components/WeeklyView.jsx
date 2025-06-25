@@ -1,5 +1,3 @@
-"use client";
-
 import { isToday } from "../utils/dateUtils";
 import Event from "./Event";
 

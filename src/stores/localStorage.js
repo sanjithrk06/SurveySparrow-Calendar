@@ -1,5 +1,3 @@
-// src/stores/localStorage.js
-
 export function getEventsFromStorage() {
   const data = localStorage.getItem("events");
   try {

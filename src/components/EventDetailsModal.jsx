@@ -1,12 +1,7 @@
-"use client";
-
 import { useState } from "react";
 import {
   X,
-  Clock,
-  Tag,
   FileText,
-  AlertTriangle,
   Calendar,
   OctagonAlert,
   Edit2,
@@ -169,7 +164,11 @@ export default function EventDetailsModal({
                       key={event.id}
                       className={`
                       relative  rounded-xl transition-all group cursor-pointer
-        ${isConflicted ? "ring-2 ring-orange-200 bg-orange-50/50 p-3 " : " py-3 "}
+        ${
+          isConflicted
+            ? "ring-2 ring-orange-200 bg-orange-50/50 p-3 "
+            : " py-3 "
+        }
                     `}
                     >
                       {isConflicted && (

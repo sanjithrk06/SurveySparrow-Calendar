@@ -1,5 +1,3 @@
-"use client";
-
 import { AlertTriangle, X } from "lucide-react";
 
 export default function ConfirmDialog({
