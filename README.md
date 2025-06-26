@@ -4,6 +4,13 @@ A modern, responsive calendar application built with **React** and **Vite**. Thi
 
 ### **Live Link:** [Click Here](https://ss-calendar.netlify.app/)
 
+## Demo Outputs
+
+<div style="width:100%;">
+<img src="public/demo-mobile.png" alt="Mobile Demo" style="max-width:100%; height:600px;" />
+<img src="public/demo-web.png" alt="Desktop Demo" style="max-width:100%; height:600px;" />
+</div>
+
 ## Features
 
 - **Monthly & Weekly Views:** Switch between month and week layouts.
